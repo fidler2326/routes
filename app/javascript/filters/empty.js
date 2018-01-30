@@ -1,4 +1,4 @@
-angular.module('mainApp')
+angular.module('myRoutes')
 	.filter('empty', function() {
 		return function(data) {
 			try {

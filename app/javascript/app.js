@@ -1,7 +1,6 @@
-var mainApp = angular.module('mainApp', ['ngRoute']);
-var mainApp = angular.module('mainApp', ['ngRoute']);
+var myRoutes = angular.module('myRoutes', ['ngRoute']);
 
-mainApp.config(["$locationProvider", "$routeProvider", function($locationProvider, $routeProvider) {
+myRoutes.config(["$locationProvider", "$routeProvider", function($locationProvider, $routeProvider) {
   $routeProvider.when('/home', {
       templateUrl: "/app/templates/home/home.html",
       controller: 'HomeController'

@@ -1,4 +1,4 @@
-angular.module('mainApp')
+angular.module('myRoutes')
   .directive('routeCard', function() {
 		return {
 			restrict: "E",

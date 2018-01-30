@@ -1,4 +1,4 @@
-mainApp.controller("HomeController", ['$scope', '$http', function($scope, $http) {
+myRoutes.controller("HomeController", ['$scope', '$http', function($scope, $http) {
   console.log("HomeController");
 
   $scope.route_from = null;
