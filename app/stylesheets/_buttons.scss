@@ -1,0 +1,13 @@
+.btn{
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #000;
+  border: 0; outline: 0;
+  border-radius: $border_radius;
+  color: #fff;
+  cursor: pointer;
+  &:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

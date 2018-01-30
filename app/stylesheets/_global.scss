@@ -1,0 +1,25 @@
+// Get fonts
+// ---------
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+
+// Variables
+// ---------
+$border_radius: 3px;
+
+// Layout
+// ------
+*{
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #ddd;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+}
+
+.wrapper{
+  width: 100%; max-width: 680px;
+  margin: 0 auto;
+}
