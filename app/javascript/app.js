@@ -19,3 +19,4 @@ myRoutes.config(["$locationProvider", "$routeProvider", function($locationProvid
     requireBase: false
   });
 }]);
+

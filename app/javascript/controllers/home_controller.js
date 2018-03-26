@@ -1,12 +1,15 @@
 myRoutes.controller("HomeController", ['$scope', '$http', function($scope, $http) {
-  console.log("HomeController");
-
   $scope.route_from = null;
   $scope.route_to = null;
   $scope.my_routes = JSON.parse(localStorage.getItem("my_routes")) || [];
   $scope.saved_routes = JSON.parse(localStorage.getItem("saved_routes")) || [];
 
+  $scope.toggleModal = function() {
+    $scope.show_modal = !$scope.show_modal;
+  }
+
   $scope.addRoute = function() {
+    $scope.show_modal = false;
     $scope.my_routes.push(
       {
         "route_from": $scope.route_from,
@@ -18,7 +21,12 @@ myRoutes.controller("HomeController", ['$scope', '$http', function($scope, $http
     $scope.updateRoutes();
   }
 
+  $scope.deleteRoute = function() {
+    // Todo - delete route
+  }
+
   $scope.updateRoutes = function() {
+    $scope.show_loading = true;
     if (localStorage.getItem("saved_routes")) {
       localStorage.getItem("saved_routes").clear;
       $scope.saved_routes = [];
@@ -35,6 +43,7 @@ myRoutes.controller("HomeController", ['$scope', '$http', function($scope, $http
         },
       };
       directionsService.route(directionsRequest, function (response, status) {
+        $scope.show_loading = false;
         console.log(response.routes[0].legs[0]);
         if (status == google.maps.DirectionsStatus.OK) {
           $scope.saved_routes.push(

@@ -1,15 +1,19 @@
-<div>
-  <div class="form-group">
-    <label>From:</label>
-    <input ng-model="route_from" type="text" />
-  </div>
+<div class="modal-overlay" ng-class="{open: show_modal}">
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="modal-close" ng-click="toggleModal()"><i class="fas fa-times"></i></a>
+      <h2>Add a new route</h2>
+      <div class="form-group">
+        <input ng-model="route_from" type="text" placeholder="Going from..." />
+      </div>
 
-  <div class="form-group">
-    <label>To:</label>
-    <input ng-model="route_to" type="text" />
-  </div>
+      <div class="form-group">
+        <input ng-model="route_to" type="text" placeholder="Going to..." />
+      </div>
 
-  <div class="form-actions">
-    <button class="btn" ng-click="addRoute()" ng-disabled="(route_from|empty) || (route_to|empty)">Add Route</button>
+      <div class="modal-footer">
+        <button class="btn" ng-click="addRoute()" ng-disabled="(route_from|empty) || (route_to|empty)"><i class="fas fa-plus"></i> Add Route</button>
+      </div>
+    </div>
   </div>
 </div>

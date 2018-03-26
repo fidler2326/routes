@@ -13,7 +13,5 @@
     "gulp-concat": "*",
     "gulp-sass": "*",
     "gulp-uglify": "*"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }

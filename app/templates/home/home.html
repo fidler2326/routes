@@ -1,5 +1,16 @@
 <div>
-  <button class="btn" ng-click="updateRoutes()">Update</button>
-  <new-route-form></new-route-form>
-  <route-card ng-repeat="route in saved_routes track by $index"></route-card>
+  <header>
+    <div class="container">
+      <a href="#" class="logo"><i class="fas fa-map-signs"></i> Routes</a>
+      <button class="btn" ng-click="updateRoutes()"><i class="fas fa-sync"></i> Update</button>
+    </div>
+  </header>
+  <div class="container">
+    <new-route-form></new-route-form>
+    <div class="progress" ng-show="show_loading">
+      <div class="indeterminate"></div>
+    </div>
+    <route-card ng-repeat="route in saved_routes track by $index"></route-card>
+    <a class="btn-floating" href="#" ng-click="toggleModal()"><i class="fas fa-plus"></i></a>
+  </div>
 </div>
