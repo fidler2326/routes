@@ -63,6 +63,14 @@ gulp.task('watch', function(){
 });
 
 
+// For heroku
+// ----------
+gulp.task('default', function() {
+  gulp.start('javascript');
+	gulp.start('css');
+});
+
+
 // Default trigger (typing 'gulp' at command line triggers these tasks)
 // --------------------------------------------------------------------
 gulp.task('default', ['sass', 'watch', 'serve', 'scripts']);

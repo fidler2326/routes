@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "scripts": {
-    "start": "gulp"
+    "start": "node app",
+    "postinstall": "gulp default"
   },
-  "dependencies": {
+  "devDependencies": {
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "*",
