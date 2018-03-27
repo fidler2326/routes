@@ -68,6 +68,7 @@ gulp.task('watch', function(){
 gulp.task('default', function() {
   gulp.start('scripts');
 	gulp.start('sass');
+	gulp.start('serve');
 });
 
 
