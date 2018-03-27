@@ -65,10 +65,12 @@ gulp.task('watch', function(){
 
 // For heroku
 // ----------
-gulp.task('default', function() {
-  gulp.start('scripts');
-	gulp.start('sass');
-	gulp.start('serve');
+gulp.task('serveprod', function() {
+  connect.server({
+    root: "index.html",
+    port: process.env.PORT || 5000, // localhost:5000
+    livereload: false
+  });
 });
 
 
