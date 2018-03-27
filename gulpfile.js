@@ -66,8 +66,8 @@ gulp.task('watch', function(){
 // For heroku
 // ----------
 gulp.task('default', function() {
-  gulp.start('javascript');
-	gulp.start('css');
+  gulp.start('scripts');
+	gulp.start('sass');
 });
 
 
