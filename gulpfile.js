@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var connect = require('gulp-connect')
 
 
 // Enviroment vars
@@ -67,7 +68,7 @@ gulp.task('watch', function(){
 // ----------
 gulp.task('serveprod', function() {
   connect.server({
-    root: "index.html",
+    root: "./",
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
