@@ -216,6 +216,12 @@ header {
 .colour-red {
   color: #F44336 !important; }
 
+.colour-orange {
+  color: #FF9800 !important; }
+
+.colour-green {
+  color: #4CAF50 !important; }
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;

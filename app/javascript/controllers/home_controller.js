@@ -3,13 +3,20 @@ myRoutes.controller("HomeController", ['$scope', '$http', function($scope, $http
   $scope.route_to = null;
   $scope.my_routes = JSON.parse(localStorage.getItem("my_routes")) || [];
   $scope.saved_routes = JSON.parse(localStorage.getItem("saved_routes")) || [];
+  $scope.id = localStorage.getItem("count") || localStorage.setItem("count",0);
+  $scope.route = {};
 
   $scope.toggleModal = function() {
     $scope.show_modal = !$scope.show_modal;
   }
 
   $scope.addRoute = function() {
+    // Close the add route modal
     $scope.show_modal = false;
+    // Update the localStorage count number
+    localStorage.setItem("count",parseInt(localStorage.getItem("count"))+1);
+    // Get the new localStorage count number for the new routes id
+    $scope.id = parseInt(localStorage.getItem("count"));
     $scope.my_routes.push(
       {
         "route_from": $scope.route_from,
@@ -21,8 +28,17 @@ myRoutes.controller("HomeController", ['$scope', '$http', function($scope, $http
     $scope.updateRoutes();
   }
 
-  $scope.deleteRoute = function() {
-    // Todo - delete route
+  $scope.deleteRoute = function(id) {
+    // Get routes array from localStorage
+    $scope.my_routes = JSON.parse(localStorage.getItem("my_routes"));
+    // Remove selected route from array
+    $scope.my_routes.splice(id,1);
+    // Resave the array to localStorage
+    localStorage.setItem("my_routes", JSON.stringify($scope.my_routes));
+    // Reset variable
+    $scope.my_routes = JSON.parse(localStorage.getItem("my_routes"));
+    // Refresh list of routes
+    $scope.updateRoutes();
   }
 
   $scope.updateRoutes = function() {
@@ -48,6 +64,7 @@ myRoutes.controller("HomeController", ['$scope', '$http', function($scope, $http
         if (status == google.maps.DirectionsStatus.OK) {
           $scope.saved_routes.push(
             {
+              "id": route.id,
               "start_address": response.routes[0].legs[0].start_address,
               "end_address": response.routes[0].legs[0].end_address,
               "duration": response.routes[0].legs[0].duration.text,

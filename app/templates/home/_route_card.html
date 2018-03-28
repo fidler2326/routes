@@ -7,16 +7,16 @@
   <div class="card-footer">
     <p>
       <small><i class="far fa-clock"></i> Average Time:</small>
-      <span class="{{route.duration_class}}"><strong>{{route.duration}}</strong></span>
+      <span><strong>{{route.duration}}</strong></span>
     </p>
     <p class="{{route.duration_class}}">
       <small><i class="far fa-clock"></i> Current Time:</small>
-      <span class="{{route.duration_class}}"><strong>{{route.duration_in_traffic}}</strong></span>
+      <span class="colour-{{route.duration_class}}"><strong>{{route.duration_in_traffic}}</strong></span>
     </p>
   </div>
   <div class="card-menu" ng-class="{active: toggle_card_$index}">
     <a href="#" class="card-menu-close" ng-click="toggle_card_$index = !toggle_card_$index"><i class="fas fa-times"></i></a>
     <p class="action"><i class="fas fa-location-arrow"></i> Get Directions</p>
-    <p class="action colour-red"><i class="fas fa-trash-alt"></i> Delete Route</p>
+    <p class="action colour-red" ng-click="deleteRoute($index)"><i class="fas fa-trash-alt"></i> Delete Route</p>
   </div>
 </div>
