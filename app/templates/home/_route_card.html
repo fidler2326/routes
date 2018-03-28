@@ -5,8 +5,14 @@
   </div>
   <a href="#" class="card-actions" ng-click="toggle_card_$index = !toggle_card_$index"><i class="fas fa-ellipsis-h"></i></a>
   <div class="card-footer">
-    <p><i class="far fa-clock"></i> Average Time: <strong>{{route.duration}}</strong></p>
-    <p class="{{route.duration_class}}"><i class="far fa-clock"></i> Current Time: <strong>{{route.duration_in_traffic}}</strong></p>
+    <p>
+      <small><i class="far fa-clock"></i> Average Time:</small>
+      <span class="{{route.duration_class}}"><strong>{{route.duration}}</strong></span>
+    </p>
+    <p class="{{route.duration_class}}">
+      <small><i class="far fa-clock"></i> Current Time:</small>
+      <span class="{{route.duration_class}}"><strong>{{route.duration_in_traffic}}</strong></span>
+    </p>
   </div>
   <div class="card-menu" ng-class="{active: toggle_card_$index}">
     <a href="#" class="card-menu-close" ng-click="toggle_card_$index = !toggle_card_$index"><i class="fas fa-times"></i></a>
