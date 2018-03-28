@@ -11,6 +11,7 @@
     <div class="progress" ng-show="show_loading">
       <div class="indeterminate"></div>
     </div>
+    <loading ng-show="show_loading"></loading>
     <route-card ng-repeat="route in saved_routes track by $index"></route-card>
     <a class="btn-floating" href="#" ng-click="toggleModal()"><i class="fas fa-plus"></i></a>
   </div>

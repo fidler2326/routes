@@ -33,4 +33,15 @@ angular.module('myRoutes')
       }],
 			replace: true
 		}
+	})
+  .directive('loading', function() {
+		return {
+			restrict: "E",
+			templateUrl: "../app/templates/home/_loading.html",
+			scope: false,
+			controller: ["$scope", function($scope) {
+        
+      }],
+			replace: true
+		}
 	});

@@ -9,7 +9,7 @@ body {
   background-color: #f5f5f5;
   font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
-  padding-bottom: 80px; }
+  padding-bottom: 75px; }
 
 .container {
   width: 100%;
@@ -31,7 +31,7 @@ header {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 20px 10px; }
+    padding: 15px 10px; }
   header .logo {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -276,8 +276,8 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 65px;
-  height: 65px;
+  width: 55px;
+  height: 55px;
   background-color: #009688;
   border-radius: 100%;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -304,3 +304,50 @@ header {
     font-size: 16px; }
     .form-group input:focus {
       border-color: #009688; }
+
+.spinner {
+  margin: 0 auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px; }
+
+.spinner > div {
+  background-color: #000;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: sk-stretchdelay 0.8s infinite ease-in-out;
+          animation: sk-stretchdelay 0.8s infinite ease-in-out; }
+
+.spinner .rect2 {
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s; }
+
+.spinner .rect3 {
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s; }
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s; }
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s; }
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4); }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1); } }
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4); }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1); } }
