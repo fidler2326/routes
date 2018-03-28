@@ -1,0 +1,9 @@
+<div class="modal-overlay" ng-class="{open: error}">
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="modal-close" ng-click="closeError()"><i class="fas fa-times"></i></a>
+      <h2 class="colour-red"><i class="fas fa-exclamation-triangle"></i> {{error.title}}</h2>
+      <p>{{error.message}}</p>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-myRoutes.controller("HomeController", ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
+myRoutes.controller("HomeController", ['$rootScope','$scope','$http','$timeout', function($rootScope,$scope,$http,$timeout) {
   $scope.route_from = null;
   $scope.route_to = null;
   $scope.my_routes = JSON.parse(localStorage.getItem("my_routes")) || [];
@@ -66,7 +66,11 @@ myRoutes.controller("HomeController", ['$scope', '$http', '$timeout', function($
       directionsService.route(directionsRequest, function (response, status) {
         if (status == "NOT_FOUND") {
           console.log("ERROR");
-          $scope.error = "Route not found! Try to be more specific - add ', UK' to the end of the address and check for spelling mistakes.";
+          $scope.error = {
+            "title": "Route Not Found",
+            "message": "Route not found! Try to be more specific - add ', UK' to the end of the address and check for spelling mistakes."
+          };
+          $scope.$apply();
           // Refresh save routes
           $scope.saved_routes = JSON.parse(localStorage.getItem("saved_routes"));
         } else {

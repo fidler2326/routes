@@ -20,4 +20,17 @@ angular.module('myRoutes')
       }],
 			replace: true
 		}
+	})
+  .directive('error', function() {
+		return {
+			restrict: "E",
+			templateUrl: "../app/templates/home/_error.html",
+			scope: false,
+			controller: ["$scope", function($scope) {
+        $scope.closeError = function() {
+          $scope.error = null;
+        }
+      }],
+			replace: true
+		}
 	});
