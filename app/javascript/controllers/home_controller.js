@@ -87,6 +87,7 @@ myRoutes.controller("HomeController", ['$rootScope','$scope','$http','$filter','
           if (type == "add") {
             $scope.my_routes.push(
               {
+                "route_name": $scope.route_name,
                 "route_from": $scope.route_from,
                 "route_to": $scope.route_to
               }
