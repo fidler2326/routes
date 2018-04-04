@@ -1,26 +1,29 @@
 <div class="card" id="{{$index}}">
-  <div style="max-width: 92%;">
-    <p class="flex mar-bottom-5">
-      <span class="tag blue"><i class="fas fa-map-marker-alt"></i> From:</span>
-      <span class="tag text-overflow">{{route.start_address}}</span></p>
-    <p class="flex">
-      <span class="tag blue"><i class="fas fa-flag-checkered"></i> To:</span>
-      <span class="tag text-overflow">{{route.end_address}}</span></p>
-  </div>
-  <a href="#" class="card-actions" ng-click="toggle_card_$index = !toggle_card_$index"><i class="fas fa-ellipsis-h"></i></a>
-  <div class="card-footer">
-    <p>
-      <small><i class="far fa-clock"></i> Average Time:</small>
-      <span><strong>{{route.duration}}</strong></span>
-    </p>
-    <p class="{{route.duration_class}}">
-      <small><i class="far fa-clock"></i> Current Time:</small>
-      <span class="colour-{{route.duration_class}}"><strong>{{route.duration_in_traffic}}</strong></span>
-    </p>
-  </div>
-  <div class="card-menu" ng-class="{active: toggle_card_$index}">
-    <a href="#" class="card-menu-close" ng-click="toggle_card_$index = !toggle_card_$index"><i class="fas fa-times"></i></a>
-    <p class="action"><i class="fas fa-location-arrow"></i> Get Directions</p>
-    <p class="action colour-red" ng-click="deleteRoute($index)"><i class="fas fa-trash-alt"></i> Delete Route</p>
+  <div class="card-header">{{route.route_name}}</div>
+  <div class="card-content">
+    <a href="#" class="card-actions" ng-click="toggle_card_$index = !toggle_card_$index"><i class="fas fa-ellipsis-h"></i></a>
+    <div style="max-width: 95%;">
+      <p class="flex mar-bottom-5">
+        <span class="tag blue">From:</span>
+        <span class="tag text-overflow">{{route.start_address}}</span></p>
+      <p class="flex">
+        <span class="tag blue">To:</span>
+        <span class="tag text-overflow">{{route.end_address}}</span></p>
+    </div>
+    <div class="card-footer">
+      <p>
+        <small><i class="far fa-clock"></i> Average Time:</small>
+        <span><strong>{{route.duration}}</strong></span>
+      </p>
+      <p class="{{route.duration_class}}">
+        <small><i class="far fa-clock"></i> Current Time:</small>
+        <span class="colour-{{route.duration_class}}"><strong>{{route.duration_in_traffic}}</strong></span>
+      </p>
+    </div>
+    <div class="card-menu" ng-class="{active: toggle_card_$index}">
+      <a href="#" class="card-menu-close" ng-click="toggle_card_$index = !toggle_card_$index"><i class="fas fa-times"></i></a>
+      <p class="action"><i class="fas fa-location-arrow"></i> Get Directions</p>
+      <p class="action colour-red" ng-click="deleteRoute($index)"><i class="fas fa-trash-alt"></i> Delete Route</p>
+    </div>
   </div>
 </div>

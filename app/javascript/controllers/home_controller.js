@@ -1,4 +1,4 @@
-myRoutes.controller("HomeController", ['$rootScope','$scope','$http','$timeout', function($rootScope,$scope,$http,$timeout) {
+myRoutes.controller("HomeController", ['$rootScope','$scope','$http','$filter','$timeout', function($rootScope,$scope,$http,$filter,$timeout) {
   $scope.route_from = null;
   $scope.route_to = null;
   $scope.my_routes = JSON.parse(localStorage.getItem("my_routes")) || [];
@@ -6,6 +6,7 @@ myRoutes.controller("HomeController", ['$rootScope','$scope','$http','$timeout',
   $scope.id = localStorage.getItem("count") || localStorage.setItem("count",0);
 
   $scope.toggleModal = function() {
+    $scope.route_name = null;
     $scope.route_to = null;
     $scope.route_from = null;
     $scope.show_modal = !$scope.show_modal;
@@ -41,6 +42,7 @@ myRoutes.controller("HomeController", ['$rootScope','$scope','$http','$timeout',
     if (type == "add") {
       $scope.routes.push(
         {
+          "route_name": $scope.route_name,
           "route_from": $scope.route_from,
           "route_to": $scope.route_to
         }
@@ -53,6 +55,9 @@ myRoutes.controller("HomeController", ['$rootScope','$scope','$http','$timeout',
       }
       $scope.routes = $scope.my_routes;
     }
+
+    // If no routes hide loading
+    if ($filter('empty')($scope.routes)) $scope.show_loading = false;
 
     angular.forEach($scope.routes, function(route, key) {
       var directionsService = new google.maps.DirectionsService();
@@ -93,6 +98,7 @@ myRoutes.controller("HomeController", ['$rootScope','$scope','$http','$timeout',
           if (status == google.maps.DirectionsStatus.OK) {
             $scope.saved_routes.push(
               {
+                "route_name": route.route_name,
                 "start_address": response.routes[0].legs[0].start_address,
                 "end_address": response.routes[0].legs[0].end_address,
                 "duration": response.routes[0].legs[0].duration.text,

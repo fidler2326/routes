@@ -48,29 +48,49 @@ header {
       font-size: 24px; }
 
 .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding: 15px 10px 0 10px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.05);
-  margin: 10px 0 0 0;
+  margin: 30px 0 0 0;
   font-size: 15px;
-  position: relative;
-  overflow: hidden; }
+  position: relative; }
   .card p {
     margin: 0 0 3px 0; }
     .card p:last-child {
       margin: 0; }
+  .card .card-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 200px;
+    height: 30px;
+    padding: 0 15px;
+    background-color: #ddd;
+    border-bottom: 1px solid #ccc;
+    border-radius: 3px;
+    font-weight: 700;
+    position: absolute;
+    top: -15px;
+    left: 5px;
+    z-index: 1; }
+  .card .card-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 25px 10px 0 10px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden; }
   .card .card-footer {
     display: -webkit-box;
     display: -ms-flexbox;
