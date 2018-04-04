@@ -5,7 +5,12 @@ myRoutes.controller("HomeController", ['$rootScope','$scope','$http','$timeout',
   $scope.saved_routes = JSON.parse(localStorage.getItem("saved_routes")) || [];
   $scope.id = localStorage.getItem("count") || localStorage.setItem("count",0);
 
+  // Add route name
+  // Set up directions
+
   $scope.toggleModal = function() {
+    $scope.route_to = null;
+    $scope.route_from = null;
     $scope.show_modal = !$scope.show_modal;
   }
 

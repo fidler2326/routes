@@ -22,7 +22,7 @@ body{
   background-color: #f5f5f5;
   font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
-  padding-bottom: 75px;
+  padding-bottom: 80px;
 }
 
 .container{
@@ -39,13 +39,13 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 10px;
+    padding: 10px 10px;
   }
   .logo{
     display: flex;
     align-items: center;
     color: #fff;
-    font-size: 26px;
+    font-size: 22px;
     text-decoration: none;
     cursor: pointer;
     svg{
@@ -208,5 +208,43 @@ header{
   background-color: #ddd;
   &.blue{
     background-color: $blue;
+    color: #fff;
+  }
+}
+
+// Arrow
+// -----
+.arrow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 24px;
+  padding: 4px 8px;
+  background-color: $blue;
+  color: #fff;
+  position: relative;
+  &:before,&:after{
+    content: '';
+    width: 0; height: 0;
+    position: absolute;
+    top: 0;
+  }
+  &.left{
+    margin: 0 10px 0 12px;
+    &:before{
+      left: -12px;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-right: 12px solid $blue;
+    }
+  }
+  &.right{
+    margin: 0 22px 0 0;
+    &:after{
+      right: -12px;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 12px solid $blue;
+    }
   }
 }
